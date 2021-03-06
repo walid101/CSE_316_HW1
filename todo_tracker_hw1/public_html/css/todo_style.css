@@ -1,0 +1,161 @@
+:root {
+    /* 
+        FIRST WE'LL DEFINE OUR SWATCHES, i.e. THE COMPLEMENTARY
+        COLORS THAT WE'LL USE TOGETHER IN MULTIPLE PLACES THAT
+        TOGETHER WILL MAKE UP A GIVEN THEME
+    */
+    --swatch-foundation:    #d9d6cc; /* USED FOR BODY BACKGROUND */
+    --swatch-primary:       #40454e; /* DOMINANT COLOR, USED FOR MOST BACKGROUNDS */
+    --swatch-complement:    #353a44; /* USED IN CONTRAST BACKGROUND FOR TOOLBARS */
+    --swatch-contrast:      #111111; /* USED IN MOUSE-OVER SELECTION OF LARGE ELEMENTS */
+    --swatch-accent:        #ffc819; /* USED IN MOUSE-OVER SELECTION OF TEXT AND BORDERS */  
+
+    --swatch-text:          #e9edf0; /* USED IN MOUSE-OVER SELECTION OF TEXT AND BORDERS */ 
+    --swatch-text-accent:   #ffc819; /* USED IN MOUSE-OVER SELECTION OF TEXT AND BORDERS */  
+
+    --font-primary:         'Lexend Exa', sans-serif;
+}
+
+#grid-container {
+    background-color: var(--swatch-foundation);
+    font-family: var(--font-primary);
+    overflow:auto;
+}
+
+.grid-item {
+    background-color: var(--swatch-primary);
+    overflow:auto;
+    padding-bottom:10px;
+    box-shadow: 2px 2px 2px var(--swatch-primary);
+    border-bottom: solid;
+    border-color: white;
+}
+
+#navbar {
+    box-shadow: 2px 2px 2px var(--swatch-primary); 
+    overflow:auto;
+}
+
+#left-sidebar {
+    padding-right: 10px;
+    background-color: var(--swatch-complement);
+    color: rgb(233,237,240);
+}
+
+#workspace {
+    background-color: var(--swatch-primary);
+    color: rgb(233,237,240);
+    overflow:auto;
+}
+
+#title-div {
+    color: rgb(255,200,25);
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+#left-sidebar-header {
+    border-bottom: dotted;
+}
+.left-sidebar-controls {
+    display: flex;
+    flex-direction: row;
+}
+#todo-list-table-header {
+    z-index: 1;
+    border-bottom: dotted;
+}
+
+.list-header-card {
+    border-bottom: dotted;
+}
+
+.list-item-card {
+    border-bottom: dotted;
+    border-width: 1px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.list-item-card:hover {
+    background-color: var(--swatch-complement);
+}
+.todo_button {
+    cursor:pointer;
+    background-color: var(--swatch-complement);
+}
+
+.todo_button:hover {
+    background-color: var(--swatch-contrast);
+}
+.modal {
+    display: none;/*hiding the modal*/
+    position: fixed;
+    /*Order of Display:*/
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    
+    overflow: auto;
+    background-color: rgba(0,0,0, 0.45);
+}
+.modal-content {
+    background-color: rgba(255,255,255);
+    margin: 20% auto;
+    width: 50%;
+    height: 18%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.3), 0 7px 20px 0 rgba(0,0,0,0.3);
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+.modal-header h2{
+    margin: 0;
+}
+.modal-header{
+    background: coral;
+    padding: 15px;
+    color: #fff;
+}
+.modal-body{
+    padding: 10px 20px;
+}
+.xBtn {
+    color: #fff;
+    float: right;
+    font-size: 30px;
+    padding: 10px;
+}
+.xBtn:hover, .xBtn:focus {
+    color:rgba(0,0,0);
+    text-decoration: none;
+    cursor:pointer;
+
+}
+.yBtn {
+    color: #fff;
+    float: right;
+    font-size: 20px;
+    padding: 13px;
+}
+.yBtn:hover, .yBtn:focus {
+    color:rgba(0,0,0);
+    text-decoration: none;
+    cursor:pointer;
+}
+.inputBox {
+    background-color: var(--swatch-primary);
+    color: rgb(233,237,240);
+}
+.list-item-control:hover {
+    background-color: rgb(5, 28, 46)
+}
+.list-item-control {
+    cursor:pointer;
+    color: white;
+}
+@keyframes modalopen {
+    from{opacity: 0};
+    to{opacity: 1};
+}
